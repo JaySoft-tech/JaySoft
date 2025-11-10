@@ -1,10 +1,12 @@
-// tailwind.config.js
 export default {
   content: ['./app/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
     extend: {
       colors: {
-        primary: '#00B090',
+        primary: {
+          DEFAULT: '#00B090',
+          hover: '#009678',
+        },
         black: '#000000',
         gray: {
           dark: '#535353',
