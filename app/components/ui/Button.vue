@@ -1,7 +1,7 @@
 <script setup lang="ts">
 interface Props {
   label: string;
-  variant?: 'primary' | 'secondary' | 'outline';
+  variant?: 'primary' | 'secondary' | 'outline' | 'lime';
   size?: 'small' | 'medium' | 'large';
   icon?: 'arrow' | 'close' | 'send';
   fullWidth?: boolean;
@@ -30,22 +30,23 @@ const variantClasses: Record<string, string> = {
     'bg-white text-primary border border-primary hover:bg-primary hover:text-white group',
   outline:
     'bg-transparent text-primary border-2 border-primary hover:bg-primary hover:text-white group',
+  lime: 'bg-lime text-black hover:text-white group',
 };
 
 const sizeClasses: Record<string, string> = {
-  small: 'h-[35px] text-[12px] rounded-[18px] pl-[30px] pr-[8px]',
+  small: 'h-[28px] text-[12px] rounded-[18px] pl-[14px] pr-[2px]',
   medium: 'h-[43px] text-[14px] rounded-[23px] pl-[30px] pr-[8px]',
   large: 'h-[52px] text-[16px] rounded-[26px] pl-[30px] pr-[8px]',
 };
 
 const widthClasses: Record<string, string> = {
-  small: 'w-[180px]',
+  small: 'w-[128px]',
   medium: 'w-[213px]',
   large: 'w-[250px]',
 };
 
 const circleSizeClasses: Record<string, string> = {
-  small: 'w-[28px] h-[28px]',
+  small: 'w-[20px] h-[20px]',
   medium: 'w-[36px] h-[36px]',
   large: 'w-[44px] h-[44px]',
 };
@@ -73,17 +74,22 @@ const buttonClasses = computed(() => [
     </span>
 
     <span
-      class="relative z-10 flex items-center justify-center rounded-full bg-white flex-shrink-0 transition-transform duration-300 ease-in-out"
-      :class="circleSizeClasses[size]"
+      class="relative z-10 flex items-center justify-center rounded-full flex-shrink-0 transition-transform duration-300 ease-in-out"
+      :class="[
+        circleSizeClasses[size],
+        variant === 'lime' ? 'bg-primary' : 'bg-white',
+      ]"
     >
       <span
-        class="absolute inset-0 rounded-full bg-white transform scale-100 transition-transform duration-300 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-[15] z-[1]"
+        class="absolute inset-0 rounded-full transform scale-100 transition-transform duration-300 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-[15] z-[1]"
+        :class="variant === 'lime' ? 'bg-primary' : 'bg-white'"
       ></span>
 
       <!-- Arrow Icon -->
       <svg
         v-if="icon === 'arrow'"
-        class="relative z-[2] w-4 h-4 stroke-primary transition-all duration-300 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:w-5 group-hover:h-5 group-hover:rotate-45"
+        class="relative z-[2] w-4 h-4 transition-all duration-300 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:w-5 group-hover:h-5 group-hover:rotate-45"
+        :class="variant === 'lime' ? 'stroke-white' : 'stroke-primary'"
         viewBox="0 0 24 24"
         fill="none"
         stroke-width="2.5"

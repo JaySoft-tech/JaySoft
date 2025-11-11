@@ -7,6 +7,7 @@ export default {
           DEFAULT: '#00B090',
           hover: '#009678',
         },
+        lime: '#BAE9E1',
         black: '#000000',
         gray: {
           dark: '#535353',
