@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Button from '~/entities/Button.vue';
+import Button from '~/components/ui/Button.vue';
 
 const handleClick = () => {
   console.log('Кнопка натиснута!');
@@ -14,21 +14,18 @@ const handleClick = () => {
       icon="arrow"
       @click="handleClick"
     />
-
     <Button
       label="Безкоштовна консультація"
       variant="primary"
       icon="arrow"
       @click="handleClick"
     />
-
     <Button
       label="Закрити"
       variant="primary"
       icon="close"
       @click="handleClick"
     />
-
     <Button
       label="Надіслати"
       variant="primary"
