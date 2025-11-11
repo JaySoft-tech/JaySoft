@@ -1,7 +1,11 @@
 <template>
-    <div class="text-5xl text-center text-bulba-123 mt-96">Jaysoft 123</div>
+    <HeroSection />
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import HeroSection from '~/components/HeroSection.vue';
+</script>
 
-<style scoped></style>
+<style scoped>
+
+</style>
