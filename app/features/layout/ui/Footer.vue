@@ -7,36 +7,51 @@
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="bg-white hover:bg-primary hover:shadow-lg hover:shadow-primary p-2 rounded-md shadow transition"
+                class="bg-white hover:bg-primary hover:shadow-lg hover:shadow-primary p-2 rounded-md shadow transition group"
             >
                 <img
                     src="/images/facebook.png"
                     alt="Facebook"
-                    class="w-5 h-5"
+                    class="w-5 h-5 group-hover:hidden"
+                />
+                <img
+                    src="/images/facebook_hover.png"
+                    alt="Facebook"
+                    class="w-5 h-5 hidden group-hover:block"
                 />
             </a>
             <a
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="bg-white hover:bg-primary hover:shadow-lg hover:shadow-primary p-2 rounded-md shadow transition"
+                class="bg-white hover:bg-primary hover:shadow-lg hover:shadow-primary p-2 rounded-md shadow transition group"
             >
                 <img
                     src="/images/instagram.png"
                     alt="Instagram"
-                    class="w-5 h-5"
+                    class="w-5 h-5 group-hover:hidden"
+                />
+                <img
+                    src="/images/instagram_hover.png"
+                    alt="Instagram"
+                    class="w-5 h-5 hidden group-hover:block"
                 />
             </a>
             <a
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="bg-white hover:bg-primary hover:shadow-lg hover:shadow-primary p-2 rounded-md shadow transition"
+                class="bg-white hover:bg-primary hover:shadow-lg hover:shadow-primary p-2 rounded-md shadow transition group"
             >
                 <img
                     src="/images/linkedin.png"
                     alt="LinkedIn"
-                    class="w-5 h-5"
+                    class="w-5 h-5 group-hover:hidden"
+                />
+                <img
+                    src="/images/linkedin_hover.png"
+                    alt="LinkedIn"
+                    class="w-5 h-5 hidden group-hover:block"
                 />
             </a>
         </div>
@@ -49,7 +64,7 @@
             </p>
 
             <div
-                class="flex gap-6 text-sm text-gray-800 font-unbounded font-light mr-[100px]"
+                class="flex gap-6 text-sm text-black font-unbounded font-light mr-[100px]"
             >
                 <a href="#" class="hover:underline"
                     >Політика конфіденційності</a
