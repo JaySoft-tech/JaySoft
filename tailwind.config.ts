@@ -18,6 +18,53 @@ export default {
         unbounded: ['Unbounded', 'sans-serif'],
         manrope: ['Manrope', 'sans-serif'],
       },
+      fontSize: {
+        hero: [
+          '32px',
+          { lineHeight: '100%', letterSpacing: '0%', fontWeight: '500' },
+        ],
+        'hero-lg': [
+          '69px',
+          { lineHeight: '74.97px', letterSpacing: '0%', fontWeight: '500' },
+        ],
+
+        'hero-desc': [
+          '14px',
+          { lineHeight: '100%', letterSpacing: '0%', fontWeight: '300' },
+        ],
+        'hero-desc-lg': [
+          '22px',
+          { lineHeight: '100%', letterSpacing: '0%', fontWeight: '300' },
+        ],
+
+        brand: [
+          '179px',
+          { lineHeight: '100%', letterSpacing: '20%', fontWeight: '500' },
+        ],
+
+        'stats-number': [
+          '64px',
+          { lineHeight: '100%', letterSpacing: '0%', fontWeight: '700' },
+        ],
+
+        'stats-desc': [
+          '14px',
+          { lineHeight: '100%', letterSpacing: '0%', fontWeight: '400' },
+        ],
+        'stats-desc-lg': [
+          '16px',
+          { lineHeight: '100%', letterSpacing: '0%', fontWeight: '400' },
+        ],
+
+        'section-heading': [
+          '32px',
+          { lineHeight: '100%', letterSpacing: '0%', fontWeight: '500' },
+        ],
+        'section-heading-lg': [
+          '61px',
+          { lineHeight: '100%', letterSpacing: '0%', fontWeight: '500' },
+        ],
+      },
     },
   },
   plugins: [],
