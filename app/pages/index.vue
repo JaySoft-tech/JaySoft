@@ -9,6 +9,19 @@ const handleClick = () => {
 const handleCardButtonClick = () => {
   console.log('Кнопка картки натиснута!');
 };
+
+const activeFilter = ref('landing');
+
+const filters = [
+  { id: 'landing', label: 'Лендінг' },
+  { id: 'multipage', label: 'Багатосторінковий' },
+  { id: 'ecommerce', label: 'Інтернет-магазин' },
+];
+
+const setFilter = (filterId: string) => {
+  activeFilter.value = filterId;
+  console.log('Активний фільтр:', filterId);
+};
 </script>
 
 <template>
@@ -41,7 +54,7 @@ const handleCardButtonClick = () => {
       >
         Кнопки
       </h2>
-      <div class="flex flex-wrap gap-4">
+      <div class="flex flex-wrap gap-4 mb-8">
         <Button
           label="Обговорити проєкт"
           variant="primary"
@@ -74,6 +87,18 @@ const handleCardButtonClick = () => {
           @click="handleClick"
         />
       </div>
+
+      <!-- Filter кнопки -->
+      <div class="hidden md:flex flex-wrap gap-4">
+        <Button
+          v-for="filter in filters"
+          :key="filter.id"
+          variant="filter"
+          :label="filter.label"
+          :active="activeFilter === filter.id"
+          @click="setFilter(filter.id)"
+        />
+      </div>
     </section>
 
     <!-- Секція з картками -->
@@ -81,7 +106,7 @@ const handleCardButtonClick = () => {
       <h2
         class="font-unbounded text-section-heading lg:text-section-heading-lg"
       >
-        Картки
+        ПОСЛУГИ
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <Card

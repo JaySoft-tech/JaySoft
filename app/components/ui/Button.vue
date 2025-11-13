@@ -1,11 +1,12 @@
 <script setup lang="ts">
 interface Props {
   label: string;
-  variant?: 'primary' | 'secondary' | 'outline' | 'lime';
+  variant?: 'primary' | 'secondary' | 'outline' | 'lime' | 'filter';
   size?: 'small' | 'medium' | 'large';
-  icon?: 'arrow' | 'close' | 'send';
+  icon?: 'arrow' | 'close' | 'send' | 'none';
   fullWidth?: boolean;
   disabled?: boolean;
+  active?: boolean;
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -14,6 +15,7 @@ const props = withDefaults(defineProps<Props>(), {
   icon: 'arrow',
   fullWidth: false,
   disabled: false,
+  active: false,
 });
 
 const emit = defineEmits<{
@@ -34,30 +36,52 @@ const variantClasses: Record<string, string> = {
 };
 
 const sizeClasses: Record<string, string> = {
-  small: 'h-[28px] text-[12px] rounded-[18px] pl-[14px] pr-[2px]',
+  small: 'h-[35px] text-[12px] rounded-[18px] pl-[30px] pr-[8px]',
   medium: 'h-[43px] text-[14px] rounded-[23px] pl-[30px] pr-[8px]',
   large: 'h-[52px] text-[16px] rounded-[26px] pl-[30px] pr-[8px]',
 };
 
 const widthClasses: Record<string, string> = {
-  small: 'w-[128px]',
+  small: 'w-[180px]',
   medium: 'w-[213px]',
   large: 'w-[250px]',
 };
 
 const circleSizeClasses: Record<string, string> = {
-  small: 'w-[20px] h-[20px]',
+  small: 'w-[28px] h-[28px]',
   medium: 'w-[36px] h-[36px]',
   large: 'w-[44px] h-[44px]',
 };
 
-const buttonClasses = computed(() => [
-  variantClasses[props.variant],
-  sizeClasses[props.size],
-  props.fullWidth ? 'w-full' : widthClasses[props.size],
-  'inline-flex items-center justify-start font-medium relative overflow-hidden isolation-isolate transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2',
-  props.disabled && 'opacity-50 cursor-not-allowed',
-]);
+const filterWidthClasses: Record<string, string> = {
+  Лендінг: 'w-[179px]',
+  Багатосторінковий: 'w-[283px]',
+  'Інтернет-магазин': 'w-[265px]',
+};
+
+const buttonClasses = computed(() => {
+  if (props.variant === 'filter') {
+    const widthClass = filterWidthClasses[props.label] ?? 'w-auto';
+
+    return [
+      'h-[49px] rounded-[24px] text-[16px] font-unbounded font-medium border transition-all duration-300 flex items-center justify-center',
+      widthClass,
+      props.active
+        ? 'bg-primary border-primary text-white hover:bg-primary-hover hover:border-primary-hover'
+        : 'bg-white border-primary text-black hover:text-primary-hover',
+      'focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2',
+      props.disabled && 'opacity-50 cursor-not-allowed',
+    ];
+  }
+
+  return [
+    variantClasses[props.variant],
+    sizeClasses[props.size],
+    props.fullWidth ? 'w-full' : widthClasses[props.size],
+    'inline-flex items-center justify-start font-medium relative overflow-hidden isolation-isolate transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2',
+    props.disabled && 'opacity-50 cursor-not-allowed',
+  ];
+});
 </script>
 
 <template>
@@ -65,15 +89,19 @@ const buttonClasses = computed(() => [
     :class="buttonClasses"
     @click="handleClick"
     :disabled="disabled"
-    style="font-family: 'Unbounded', sans-serif"
+    :style="
+      props.variant !== 'filter' ? 'font-family: \'Unbounded\', sans-serif' : ''
+    "
   >
     <span
-      class="relative z-20 flex-grow text-left transition-colors duration-300"
+      class="relative z-20 transition-colors duration-300"
+      :class="props.variant !== 'filter' ? 'flex-grow text-left' : ''"
     >
       {{ label }}
     </span>
 
     <span
+      v-if="props.variant !== 'filter'"
       class="relative z-10 flex items-center justify-center rounded-full flex-shrink-0 transition-transform duration-300 ease-in-out"
       :class="[
         circleSizeClasses[size],
