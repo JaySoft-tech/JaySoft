@@ -48,29 +48,25 @@
                     </div>
 
                     <NuxtLink
-                        href="#contact"
-                        class="group inline-flex h-[43px] w-[213px] items-center justify-between rounded-full bg-gradient-to-r from-primary to-[#02c9a8] px-5 text-[14px] font-medium text-white shadow-md transition duration-200 hover:shadow-lg"
-                    >
-                        <span class="leading-none text-left"
-                            >Обговорити<br />проект</span
-                        >
-                        <span
-                            class="ml-4 flex h-[35px] w-[35px] items-center justify-center rounded-full bg-white text-primary transition-all duration-200 group-hover:w-[72px]"
-                        >
-                            <svg
-                                class="h-[18px] w-[18px] -rotate-25 transition-transform duration-200 group-hover:translate-x-1.5"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2.2"
-                            >
-                                <path d="M8 12h8"></path>
-                                <path d="M14 8l4 4-4 4"></path>
-                            </svg>
-                        </span>
-                    </NuxtLink>
+    href="https://t.me/CHEMPION_PO_KYNI_2025"
+    class="group inline-flex h-[43px] w-[213px] items-center justify-between rounded-full bg-gradient-to-r from-primary to-[#02c9a8] px-5 text-[14px] font-medium text-white shadow-md transition duration-200 hover:shadow-lg
+           active:bg-white active:from-white active:to-white focus-visible:bg-white focus-visible:from-white focus-visible:to-white"
+>
+    <span class="leading-none text-left
+                 active:text-primary focus-visible:text-primary">
+        Обговорити<br />проект
+    </span>
+    <span
+        class="ml-4 flex h-[35px] w-[35px] items-center justify-center rounded-full bg-white text-primary transition-all duration-300 group-hover:w-[72px]"
+    >
+        <img
+            class="h-[18px] w-[18px] transition-transform duration-300 group-hover:rotate-45 group-hover:translate-x-2
+                   active:scale-110 focus-visible:scale-110"
+            src="/images/Arrows.png"
+            alt=""
+        >
+    </span>
+</NuxtLink>
                 </div>
             </div>
         </div>
