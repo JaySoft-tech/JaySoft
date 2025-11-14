@@ -1,5 +1,5 @@
 <template>
-  <section class="relative bg-white min-h-screen overflow-hidden">
+  <section id="hero" class="relative bg-white min-h-screen overflow-hidden">
     <div class="absolute inset-0 z-0">
       <div class="absolute inset-y-0 right-0 w-full lg:w-4/5">
         <img
