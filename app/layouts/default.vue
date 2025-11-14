@@ -1,12 +1,12 @@
 <template>
     <div>
-        <Footer />
+        <Header />
 
         <main>
             <slot />
         </main>
 
-        <Header />
+        <Footer />
     </div>
 </template>
 
