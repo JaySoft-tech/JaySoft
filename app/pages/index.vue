@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Button from '~/components/ui/Button.vue';
-import ServicesSection from '~/features/layout/ui/ServicesSection.vue';
+import ServicesSection from '~/features/home/ui/ServicesSection.vue';
 
 const handleClick = () => {
   console.log('Кнопка натиснута!');
