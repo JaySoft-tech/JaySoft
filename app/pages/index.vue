@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Button from '~/components/ui/Button.vue';
-import Card from '~/components/ui/Card.vue';
+import ServicesSection from '~/features/home/ui/ServicesSection.vue';
 
 const handleClick = () => {
   console.log('Кнопка натиснута!');
@@ -101,42 +101,6 @@ const setFilter = (filterId: string) => {
       </div>
     </section>
 
-    <!-- Секція з картками -->
-    <section>
-      <h2
-        class="font-unbounded text-section-heading lg:text-section-heading-lg"
-      >
-        ПОСЛУГИ
-      </h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <Card
-          title="Landing page"
-          description="Представляємо переваги Вашого бізнесу на односторінковому сайті для швидкого залучення клієнтів"
-          price="від 250$"
-          @button-click="handleCardButtonClick"
-        />
-
-        <Card
-          title="Корпоративний сайт"
-          description="Знаходимо найоптимальніше рішення для ознайомлення користувачів з Вашою компанією та послугами"
-          price="від 600$"
-          @button-click="handleCardButtonClick"
-        />
-
-        <Card
-          title="WOW - Сайт"
-          description="Перетворюємо ідеї в мову анімацій, додаємо інтерактиву та створюємо унікальний продукт"
-          price="від 2000$"
-          @button-click="handleCardButtonClick"
-        />
-
-        <Card
-          title="Інтернет магазин"
-          description="Створюємо зручні платформи для швидкого продажу Вашої продукції чи товарів онлайн"
-          price="від 800$"
-          @button-click="handleCardButtonClick"
-        />
-      </div>
-    </section>
+    <ServicesSection />
   </div>
 </template>
