@@ -1,10 +1,10 @@
 <template>
-    <div class="p-8 bg-gray-50 min-h-screen">
+    <div
+        class="p-8 bg-wgite flex flex-col gap-[60px] sm:gap-[100px] mb-[60px] sm:mb-[100px]"
+    >
         <ServicesSection />
 
-        <div>
-            <ContactForm />
-        </div>
+        <ContactForm />
     </div>
 </template>
 

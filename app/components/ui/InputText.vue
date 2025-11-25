@@ -7,7 +7,7 @@
         v-model="model"
         :disabled="disabled"
         :class="[
-            'bg-[#FFFFFF] h-full rounded-[14px] w-full py-[10px] md:py-[23px] px-[17px] md:px-[36px] text-[#777777] text-[11px]/[100%] md:text-[22px]/[100%] font-light outline-none font-unbounded',
+            'bg-[#FFFFFF] h-full rounded-[6.59px] sm:rounded-[14px] w-full py-[10px] md:py-[23px] px-[17px] md:px-[36px] text-[#777777] text-[11px]/[100%] md:text-[22px]/[100%] font-light outline-none font-unbounded',
             sizeClass,
         ]"
     />
