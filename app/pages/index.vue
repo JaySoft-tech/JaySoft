@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import Button from '~/components/ui/Button.vue';
-import Card from '~/components/ui/Card.vue';
+// import Card from '~/components/ui/Card.vue';
 import ContactForm from '~/features/contact-form/ui/ContactForm.vue';
+import ServicesSection from '~/features/home/ui/ServicesSection.vue';
 
 const handleClick = () => {
     console.log('Кнопка натиснута!');
@@ -146,4 +147,5 @@ const setFilter = (filterId: string) => {
             <ContactForm />
         </div>
     </div>
+    <ServicesSection />
 </template>
