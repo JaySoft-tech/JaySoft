@@ -75,7 +75,7 @@ const handleCardClick = (serviceId: number) => {
           class="absolute top-5 right-4 lg:top-8 lg:right-12 z-10 w-[62px] h-[62px] lg:w-[108px] lg:h-[108px]"
         >
           <img
-            :src="`/images/${service.icon}.svg`"
+            :src="`/images/service-icon/${service.icon}.svg`"
             :alt="`${service.title} icon`"
             class="w-full h-full object-contain"
           />
