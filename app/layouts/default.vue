@@ -2,7 +2,7 @@
     <div class="min-h-screen flex flex-col">
         <Header />
 
-        <main class="flex-grow pt-[120px]">
+        <main class="flex-grow">
             <slot />
         </main>
 

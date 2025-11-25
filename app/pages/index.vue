@@ -1,7 +1,11 @@
 <template>
     <div
-        class="p-8 bg-wgite flex flex-col gap-[60px] sm:gap-[100px] mb-[60px] sm:mb-[100px]"
+        class="bg-wgite flex flex-col gap-[60px] sm:gap-[100px] mb-[60px] sm:mb-[100px]"
     >
+        <HeroSection />
+
+        <AboutSection />
+
         <ServicesSection />
 
         <ContactForm />
@@ -9,7 +13,8 @@
 </template>
 
 <script setup lang="ts">
-import Button from '~/components/ui/Button.vue';
+import HeroSection from '~/features/home/ui/HeroSection.vue';
+import AboutSection from '~/features/home/ui/AboutSection.vue';
 import ContactForm from '~/features/contact-form/ui/ContactForm.vue';
 import ServicesSection from '~/features/home/ui/ServicesSection.vue';
 

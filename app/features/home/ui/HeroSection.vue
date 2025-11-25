@@ -61,7 +61,7 @@
                         >
                             <img
                                 class="h-[18px] w-[18px] transition-transform duration-300 active:scale-110 focus-visible:scale-110"
-                                src="/images/Arrows.png"
+                                src="/images/arrows.png"
                                 alt="Arrow"
                             />
                         </span>
@@ -165,7 +165,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue';
+import Counter from '~/components/general/Counter.vue';
 
 const counterSection = ref<HTMLElement | null>(null);
 const startCounter = ref(false);
@@ -174,8 +174,8 @@ let observer: IntersectionObserver | null = null;
 onMounted(() => {
     if (counterSection.value) {
         observer = new IntersectionObserver(
-            entries => {
-                entries.forEach(entry => {
+            (entries) => {
+                entries.forEach((entry) => {
                     if (entry.isIntersecting && !startCounter.value) {
                         startCounter.value = true;
                     }
@@ -183,7 +183,7 @@ onMounted(() => {
             },
             {
                 threshold: 0.3,
-            }
+            },
         );
 
         observer.observe(counterSection.value);
