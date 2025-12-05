@@ -1,8 +1,8 @@
 <template>
-    <div>
+    <div class="min-h-screen flex flex-col">
         <Header />
 
-        <main>
+        <main class="flex-grow">
             <slot />
         </main>
 
@@ -14,5 +14,3 @@
 import Header from '~/features/layout/ui/Header.vue';
 import Footer from '~/features/layout/ui/Footer.vue';
 </script>
-
-<style scoped></style>

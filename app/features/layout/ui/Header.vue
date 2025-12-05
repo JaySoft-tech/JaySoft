@@ -1,72 +1,58 @@
 <template>
-    <header
-        class="fixed top-0 left-0 w-full z-50 flex justify-center pt-6 **bg-transparent**"
-    >
-        <div class="mx-auto w-full max-w-[1720px] px-6">
+    <header class="fixed top-0 left-0 w-full z-50 pt-6 px-6">
+        <div class="mx-auto w-full max-w-[1320px]">
             <div
-                class="glass-card relative flex h-[72px] items-center justify-center rounded-full px-12 text-[14px] font-unbounded font-medium text-gray-900"
+                class="hidden lg:flex glass-card h-[72px] items-center justify-between px-8 rounded-full font-unbounded"
             >
-                <nav class="absolute left-8 flex items-center gap-6">
-                    <NuxtLink
+                <nav class="flex items-center gap-[35px]">
+                    <a
                         v-for="link in navLinks"
                         :key="link.href"
                         :href="link.href"
-                        class="transition-colors hover:text-primary"
+                        class="text-[14px] font-medium leading-[100%] text-black transition-colors duration-300 hover:text-primary"
                     >
                         {{ link.label }}
-                    </NuxtLink>
+                    </a>
                 </nav>
 
                 <NuxtLink
                     href="#hero"
-                    class="flex items-center gap-3 text-base font-semibold text-gray-900"
+                    class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-3"
                 >
-                    <NuxtImg
-                        src="/images/logo.png"
-                        width="36"
-                        height="36"
+                    <img
+                        src="/images/logo.svg"
                         alt="JaySoft logo"
-                        class="h-9 w-9"
+                        class="h-36 w-36"
                     />
-                    <span class="flex items-center text-gray-900">
-                        <span>&lt;</span>
-                        <span
-                            ><span class="text-primary">Jay</span
-                            ><span class="text-gray-900">Soft</span></span
-                        >
-                        <span>&gt;</span>
-                    </span>
                 </NuxtLink>
 
-                <div class="absolute right-8 flex items-center gap-6">
+                <div class="flex items-center gap-6">
                     <div
-                        class="hidden items-center gap-2 text-[12px] font-medium uppercase tracking-wide text-gray-500 md:flex"
+                        class="flex items-center gap-2 text-[14px] font-medium"
                     >
-                        <span class="text-gray-900">Укр</span>
-                        <span class="h-4 w-px rounded-full bg-gray-300"></span>
-                        <span>Eng</span>
+                        <template
+                            v-for="(lang, index) in langs"
+                            :key="lang.key"
+                        >
+                            <button
+                                @click="switchLang(lang.key)"
+                                :class="getLangButtonClasses(lang.key)"
+                            >
+                                {{ lang.label }}
+                            </button>
+                            <span
+                                v-if="index < langs.length - 1"
+                                class="w-px h-4 bg-gray-300"
+                            ></span>
+                        </template>
                     </div>
 
-                    <NuxtLink
-    href="https://t.me/CHEMPION_PO_KYNI_2025"
-    class="group inline-flex h-[43px] w-[213px] items-center justify-between rounded-full bg-gradient-to-r from-primary to-[#02c9a8] px-5 text-[14px] font-medium text-white shadow-md transition duration-200 hover:shadow-lg
-           active:bg-white active:from-white active:to-white focus-visible:bg-white focus-visible:from-white focus-visible:to-white"
->
-    <span class="leading-none text-left
-                 active:text-primary focus-visible:text-primary">
-        Обговорити<br />проект
-    </span>
-    <span
-        class="ml-4 flex h-[35px] w-[35px] items-center justify-center rounded-full bg-white text-primary transition-all duration-300 group-hover:w-[72px]"
-    >
-        <img
-            class="h-[18px] w-[18px] transition-transform duration-300 group-hover:rotate-45 group-hover:translate-x-2
-                   active:scale-110 focus-visible:scale-110"
-            src="/images/Arrows.png"
-            alt=""
-        >
-    </span>
-</NuxtLink>
+                    <Button
+                        label="Обговорити проєкт"
+                        variant="primary"
+                        icon="arrow"
+                        @click="handleContactClick"
+                    />
                 </div>
             </div>
         </div>
@@ -74,11 +60,44 @@
 </template>
 
 <script setup lang="ts">
+import Button from '~/components/ui/Button.vue';
+
+type LangKey = 'ukr' | 'eng';
+
 const navLinks = [
-    { label: 'Проекти', href: '#projects' },
+    { label: 'Проєкти', href: '#projects' },
     { label: 'Послуги', href: '#services' },
     { label: 'Контакти', href: '#contact' },
 ];
+
+const langs: { key: LangKey; label: string }[] = [
+    { key: 'ukr', label: 'Укр' },
+    { key: 'eng', label: 'Eng' },
+];
+
+const currentLang = ref<LangKey>('ukr');
+
+const handleContactClick = () => {
+    console.log('Contact button clicked');
+};
+
+const switchLang = (lang: LangKey) => {
+    currentLang.value = lang;
+    console.log(`Switched to language: ${lang}`);
+};
+
+const getLangButtonClasses = (langKey: LangKey) => {
+    const baseClasses =
+        'w-[28px] h-[15px] flex items-center justify-center transition-all duration-300';
+    const activeClasses = 'text-primary scale-110 border-b-2 border-primary';
+    const inactiveClasses =
+        'text-black hover:text-primary hover:scale-105 hover:border-b-2 hover:border-primary/50';
+
+    return [
+        baseClasses,
+        currentLang.value === langKey ? activeClasses : inactiveClasses,
+    ];
+};
 </script>
 
 <style scoped>
@@ -86,7 +105,6 @@ const navLinks = [
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
-    border-radius: 20px;
     border: 0.5px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
         inset 0 1px 0 rgba(255, 255, 255, 0.5),
