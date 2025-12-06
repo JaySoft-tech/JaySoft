@@ -6,6 +6,8 @@
 
         <AboutSection />
 
+        <ProjectSection />
+
         <ServicesSection />
 
         <ContactForm />
@@ -17,6 +19,7 @@ import HeroSection from '~/features/home/ui/HeroSection.vue';
 import AboutSection from '~/features/home/ui/AboutSection.vue';
 import ContactForm from '~/features/contact-form/ui/ContactForm.vue';
 import ServicesSection from '~/features/home/ui/ServicesSection.vue';
+import ProjectSection from '~/features/home/ui/ProjectSection.vue';
 
 const handleClick = () => {
     console.log('Кнопка натиснута!');
