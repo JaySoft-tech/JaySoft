@@ -54,46 +54,48 @@
         />
 
         <!-- Random words -->
-        <div class="absolute max-w-[1320px] w-full">
-            <div class="relative mx-auto z-50">
+        <div
+            class="absolute max-sm:left-0 max-w-[390px] sm:max-w-[1320px] w-full"
+        >
+            <div class="relative sm:mx-auto z-50">
                 <div
-                    class="text-primary font-medium font-unbounded text-[22px]/[100%] absolute top-[16.04vh] 2xl:top-[19.04vh] left-[50.33%] 2xl:left-[39.33%] float float--slow"
+                    class="text-primary font-medium font-unbounded text-[12px]/[100%] sm:text-[22px]/[100%] absolute top-[271px] sm:top-[16.04vh] 2xl:top-[19.04vh] left-[5.33%] sm:left-[50.33%] 2xl:left-[39.33%] float float--slow"
                 >
                     design
                 </div>
 
                 <div
-                    class="text-primary font-medium font-unbounded text-[22px]/[100%] absolute top-[30.48vh] 2xl:top-[30.48vh] left-[43.18%] 2xl:left-[43.18%] float float--fast float--delay-1"
+                    class="text-primary font-medium font-unbounded text-[16px]/[100%] sm:text-[22px]/[100%] absolute top-[382px] sm:top-[30.48vh] 2xl:top-[30.48vh] left-[2.18%] sm:left-[43.18%] 2xl:left-[43.18%] float float--fast float--delay-1"
                 >
                     new
                 </div>
 
                 <div
-                    class="text-primary font-medium font-unbounded text-[22px]/[100%] absolute top-[57.55vh] 2xl:top-[53.55vh] left-[43.75%] 2xl:left-[50.75%] float float--rev float--delay-2"
+                    class="text-primary font-medium font-unbounded text-[16px]/[100%] sm:text-[22px]/[100%] absolute top-[518px] sm:top-[57.55vh] 2xl:top-[53.55vh] left-[10.75%] sm:left-[43.75%] 2xl:left-[50.75%] float float--rev float--delay-2"
                 >
                     creative
                 </div>
 
                 <div
-                    class="text-primary font-medium font-unbounded text-[22px]/[100%] absolute top-[59.06vh] 2xl:top-[59.06vh] right-auto left-[59%] 2xl:left-auto 2xl:right-[20.36%] float float--slow float--delay-3"
+                    class="text-primary font-medium font-unbounded text-[16px]/[100%] sm:text-[22px]/[100%] absolute top-[546px] sm:top-[59.06vh] 2xl:top-[59.06vh] right-auto left-[45%] sm:left-[59%] 2xl:left-auto 2xl:right-[20.36%] float float--slow float--delay-3"
                 >
                     animated
                 </div>
 
                 <div
-                    class="text-primary font-medium font-unbounded text-[22px]/[100%] absolute top-[48.56vh] 2xl:top-[45.56vh] right-[10%] xl:right-[18.15%] 2xl:right-[3.15%] float float--fast"
+                    class="text-primary font-medium font-unbounded text-[14px]/[100%] sm:text-[22px]/[100%] absolute top-[493px] sm:top-[48.56vh] 2xl:top-[45.56vh] right-[8%] sm:right-[10%] xl:right-[18.15%] 2xl:right-[3.15%] float float--fast"
                 >
                     effective
                 </div>
 
                 <div
-                    class="text-primary font-medium font-unbounded text-[22px]/[100%] absolute top-[29.31vh] 2xl:top-[29.31vh] right-[10%] xl:right-[15.96%] 2xl:right-[1.96%] float float--slow float--delay-2"
+                    class="text-primary font-medium font-unbounded text-[16px]/[100%] sm:text-[22px]/[100%] absolute top-[424px] sm:top-[29.31vh] 2xl:top-[29.31vh] right-[5%] sm:right-[10%] xl:right-[15.96%] 2xl:right-[1.96%] float float--slow float--delay-2"
                 >
                     WOW
                 </div>
 
                 <div
-                    class="text-primary font-medium font-unbounded text-[22px]/[100%] absolute top-[16.04vh] 2xl:top-[16.04vh] right-[20.94%] 2xl:right-[1.94%] float float--rev float--delay-1"
+                    class="text-primary font-medium font-unbounded text-[12px]/[100%] sm:text-[22px]/[100%] absolute top-[325px] sm:top-[16.04vh] 2xl:top-[16.04vh] right-[0%] sm:right-[20.94%] 2xl:right-[1.94%] float float--rev float--delay-1"
                 >
                     unique
                 </div>
