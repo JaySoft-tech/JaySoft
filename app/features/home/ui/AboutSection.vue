@@ -1,5 +1,5 @@
 <template>
-    <section id="about" class="relative py-20 lg:py-32 overflow-hidden">
+    <section id="about" class="relative lg:py-32 overflow-hidden">
         <div class="absolute inset-0 z-0 mt-[268px]">
             <NuxtImg
                 src="/images/about_background.png"

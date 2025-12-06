@@ -4,7 +4,7 @@
     >
         <Hero />
 
-        <AboutSection />
+        <About class="mt-[50px]" />
 
         <ServicesSection />
 
@@ -17,6 +17,7 @@ import AboutSection from '~/features/home/ui/AboutSection.vue';
 import ContactForm from '~/features/contact-form/ui/ContactForm.vue';
 import ServicesSection from '~/features/home/ui/ServicesSection.vue';
 import Hero from '~/features/home/ui/Hero.vue';
+import About from '~/features/home/ui/About.vue';
 
 const handleClick = () => {
     console.log('Кнопка натиснута!');
