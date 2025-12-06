@@ -110,9 +110,9 @@ const variantClasses: Record<string, string> = {
 };
 
 const sizeClasses: Record<string, string> = {
-    small: 'h-[35px] text-[12px] rounded-[18px] pl-[30px] pr-[8px]',
-    medium: 'h-[43px] text-[14px] rounded-[23px] pl-[30px] pr-[8px]',
-    large: 'h-[52px] text-[16px] rounded-[26px] pl-[30px] pr-[8px]',
+    small: 'h-[35px] text-[12px]/[12px] rounded-[18px] pl-[30px] pr-[8px]',
+    medium: 'h-[43px] text-[14px]/[14px] rounded-[23px] pl-[30px] pr-[8px]',
+    large: 'h-[52px] text-[16px]/[16px] rounded-[26px] pl-[30px] pr-[8px]',
 };
 
 const widthClasses: Record<string, string> = {
