@@ -1,104 +1,140 @@
 <template>
-    <div
-        class="min-h-[650px] 2xl:min-h-[780px] h-fit bg-gradient-to-b sm:bg-gradient-to-r from-white via-white to-[#00B090D9] rounded-b-[30px] relative px-[20px] flex items-center justify-between flex-col"
-    >
-        <!-- container -->
-        <div class="max-w-[1320px] w-full h-full mx-auto">
-            <!-- heading text -->
-            <div class="max-w-[1240px] w-full mx-auto mt-[74px] sm:mt-[166px]">
-                <h1
-                    class="text-[32px]/[100%] sm:text-[59px]/[75px] font-unbounded font-medium max-w-[240px] sm:max-w-[520px]"
+    <div>
+        <div
+            class="min-h-[650px] 2xl:min-h-[780px] h-fit bg-gradient-to-b sm:bg-gradient-to-r from-white via-white to-[#00B090D9] rounded-b-[30px] relative px-[20px] flex items-center justify-between flex-col"
+        >
+            <!-- container -->
+            <div class="max-w-[1320px] w-full h-full mx-auto">
+                <!-- heading text -->
+                <div
+                    class="max-w-[1240px] w-full mx-auto mt-[74px] sm:mt-[166px]"
                 >
-                    СТУДІЯ РОЗРОБКИ ВЕБ САЙТІВ
-                </h1>
+                    <h1
+                        class="text-[32px]/[100%] sm:text-[59px]/[75px] font-unbounded font-medium max-w-[240px] sm:max-w-[520px]"
+                    >
+                        СТУДІЯ РОЗРОБКИ ВЕБ САЙТІВ
+                    </h1>
 
-                <h2
-                    class="mt-[10px] sm:mt-[30px] max-w-[420px] font-unbounded font-light text-[14px]/[100%] sm:text-[22px]/[100%] m"
+                    <h2
+                        class="mt-[10px] sm:mt-[30px] max-w-[420px] font-unbounded font-light text-[14px]/[100%] sm:text-[22px]/[100%] m"
+                    >
+                        Розробляємо функціональні <br />
+                        сайти для бізнесу та брендів
+                    </h2>
+
+                    <div class="sm:block hidden">
+                        <Button
+                            class="mt-[40px]"
+                            label="Безкоштовна консультація"
+                            variant="primary"
+                            icon="arrow"
+                        />
+                    </div>
+                </div>
+
+                <!-- logo JAYSOFT -->
+                <p
+                    class="mt-[25px] font-unbounded font-medium text-center 2xl:text-start sm:text-[100px]/[100%] 2xl:text-[179px]/[100%] tracking-[50px] sm:block hidden"
                 >
-                    Розробляємо функціональні <br />
-                    сайти для бізнесу та брендів
-                </h2>
+                    <span class="text-primary">JAY</span
+                    ><span class="text-[#000000]">SOFT</span>
+                </p>
 
-                <div class="sm:block hidden">
-                    <Button
-                        class="mt-[40px]"
-                        label="Безкоштовна консультація"
-                        variant="primary"
-                        icon="arrow"
+                <div class="sm:relative w-full">
+                    <img
+                        class="absolute left-[-20px] sm:left-[40%] 2xl:left-[38%] bottom-0 2xl:bottom-[-28px] max-h-[418px] sm:max-h-[500px] 2xl:max-h-[780px] object-contain shrink-0"
+                        src="/images/hero-bg.png"
+                        alt="Робот"
                     />
                 </div>
             </div>
 
-            <!-- logo JAYSOFT -->
-            <p
-                class="mt-[25px] font-unbounded font-medium text-center 2xl:text-start sm:text-[100px]/[100%] 2xl:text-[179px]/[100%] tracking-[50px] sm:block hidden"
-            >
-                <span class="text-primary">JAY</span
-                ><span class="text-[#000000]">SOFT</span>
-            </p>
+            <!-- mobile button -->
+            <Button
+                class="sm:hidden block mb-[20px]"
+                label="Обговорити проєкт"
+                variant="primary"
+                icon="arrow"
+            />
 
-            <div class="sm:relative w-full">
-                <img
-                    class="absolute left-[-20px] sm:left-[40%] 2xl:left-[38%] bottom-0 2xl:bottom-[-28px] max-h-[418px] sm:max-h-[500px] 2xl:max-h-[780px] object-contain shrink-0"
-                    src="/images/hero-bg.png"
-                    alt="Робот"
-                />
+            <!-- random words -->
+            <div
+                class="absolute max-sm:left-0 max-w-[390px] sm:max-w-[1320px] w-full"
+            >
+                <div class="relative sm:mx-auto z-50">
+                    <div
+                        class="text-primary font-medium font-unbounded text-[12px]/[100%] sm:text-[22px]/[100%] absolute top-[271px] sm:top-[16.04vh] 2xl:top-[19.04vh] left-[5.33%] sm:left-[50.33%] 2xl:left-[39.33%] float float--slow"
+                    >
+                        design
+                    </div>
+
+                    <div
+                        class="text-primary font-medium font-unbounded text-[16px]/[100%] sm:text-[22px]/[100%] absolute top-[382px] sm:top-[30.48vh] 2xl:top-[30.48vh] left-[2.18%] sm:left-[43.18%] 2xl:left-[43.18%] float float--fast float--delay-1"
+                    >
+                        new
+                    </div>
+
+                    <div
+                        class="text-primary font-medium font-unbounded text-[16px]/[100%] sm:text-[22px]/[100%] absolute top-[518px] sm:top-[57.55vh] 2xl:top-[53.55vh] left-[10.75%] sm:left-[43.75%] 2xl:left-[50.75%] float float--rev float--delay-2"
+                    >
+                        creative
+                    </div>
+
+                    <div
+                        class="text-primary font-medium font-unbounded text-[16px]/[100%] sm:text-[22px]/[100%] absolute top-[546px] sm:top-[59.06vh] 2xl:top-[59.06vh] right-auto left-[45%] sm:left-[59%] 2xl:left-auto 2xl:right-[20.36%] float float--slow float--delay-3"
+                    >
+                        animated
+                    </div>
+
+                    <div
+                        class="text-primary font-medium font-unbounded text-[14px]/[100%] sm:text-[22px]/[100%] absolute top-[493px] sm:top-[48.56vh] 2xl:top-[45.56vh] right-[8%] sm:right-[10%] xl:right-[18.15%] 2xl:right-[3.15%] float float--fast"
+                    >
+                        effective
+                    </div>
+
+                    <div
+                        class="text-primary font-medium font-unbounded text-[16px]/[100%] sm:text-[22px]/[100%] absolute top-[424px] sm:top-[29.31vh] 2xl:top-[29.31vh] right-[5%] sm:right-[10%] xl:right-[15.96%] 2xl:right-[1.96%] float float--slow float--delay-2"
+                    >
+                        WOW
+                    </div>
+
+                    <div
+                        class="text-primary font-medium font-unbounded text-[12px]/[100%] sm:text-[22px]/[100%] absolute top-[325px] sm:top-[16.04vh] 2xl:top-[16.04vh] right-[0%] sm:right-[20.94%] 2xl:right-[1.94%] float float--rev float--delay-1"
+                    >
+                        unique
+                    </div>
+                </div>
             </div>
         </div>
 
-        <Button
-            class="sm:hidden block mb-[20px]"
-            label="Обговорити проєкт"
-            variant="primary"
-            icon="arrow"
-        />
-
-        <!-- Random words -->
+        <!-- counters metrics data -->
         <div
-            class="absolute max-sm:left-0 max-w-[390px] sm:max-w-[1320px] w-full"
+            class="px-[20px] max-w-[1240px] w-full mx-auto mt-[60px] gap-[20px] text-black font-unbounded flex flex-col sm:flex-row justify-between max-sm:items-center"
         >
-            <div class="relative sm:mx-auto z-50">
-                <div
-                    class="text-primary font-medium font-unbounded text-[12px]/[100%] sm:text-[22px]/[100%] absolute top-[271px] sm:top-[16.04vh] 2xl:top-[19.04vh] left-[5.33%] sm:left-[50.33%] 2xl:left-[39.33%] float float--slow"
-                >
-                    design
+            <div
+                class="w-[251px] sm:min-w-[190px] sm:w-auto"
+                v-for="item in metricsData"
+            >
+                <!-- title -->
+                <div class="font-bold text-[64px]/[100%] whitespace-nowrap">
+                    <Counter
+                        :from="0"
+                        :to="item.numValue"
+                        separator=""
+                        direction="up"
+                        :duration="1"
+                        :delay="0"
+                        class-name="count-up-text "
+                    />
+
+                    <span> {{ item.sign }}</span>
                 </div>
 
-                <div
-                    class="text-primary font-medium font-unbounded text-[16px]/[100%] sm:text-[22px]/[100%] absolute top-[382px] sm:top-[30.48vh] 2xl:top-[30.48vh] left-[2.18%] sm:left-[43.18%] 2xl:left-[43.18%] float float--fast float--delay-1"
-                >
-                    new
-                </div>
-
-                <div
-                    class="text-primary font-medium font-unbounded text-[16px]/[100%] sm:text-[22px]/[100%] absolute top-[518px] sm:top-[57.55vh] 2xl:top-[53.55vh] left-[10.75%] sm:left-[43.75%] 2xl:left-[50.75%] float float--rev float--delay-2"
-                >
-                    creative
-                </div>
-
-                <div
-                    class="text-primary font-medium font-unbounded text-[16px]/[100%] sm:text-[22px]/[100%] absolute top-[546px] sm:top-[59.06vh] 2xl:top-[59.06vh] right-auto left-[45%] sm:left-[59%] 2xl:left-auto 2xl:right-[20.36%] float float--slow float--delay-3"
-                >
-                    animated
-                </div>
-
-                <div
-                    class="text-primary font-medium font-unbounded text-[14px]/[100%] sm:text-[22px]/[100%] absolute top-[493px] sm:top-[48.56vh] 2xl:top-[45.56vh] right-[8%] sm:right-[10%] xl:right-[18.15%] 2xl:right-[3.15%] float float--fast"
-                >
-                    effective
-                </div>
-
-                <div
-                    class="text-primary font-medium font-unbounded text-[16px]/[100%] sm:text-[22px]/[100%] absolute top-[424px] sm:top-[29.31vh] 2xl:top-[29.31vh] right-[5%] sm:right-[10%] xl:right-[15.96%] 2xl:right-[1.96%] float float--slow float--delay-2"
-                >
-                    WOW
-                </div>
-
-                <div
-                    class="text-primary font-medium font-unbounded text-[12px]/[100%] sm:text-[22px]/[100%] absolute top-[325px] sm:top-[16.04vh] 2xl:top-[16.04vh] right-[0%] sm:right-[20.94%] 2xl:right-[1.94%] float float--rev float--delay-1"
-                >
-                    unique
-                </div>
+                <!-- text -->
+                <p
+                    class="mt-[6px] sm:mt-[16px] text-[14px]/[100%] sm:text-[16px]/[100%]"
+                    v-html="item.textHtml"
+                ></p>
             </div>
         </div>
     </div>
@@ -106,6 +142,35 @@
 
 <script setup lang="ts">
 import Button from '~/components/ui/Button.vue';
+import Counter from '~/components/general/Counter.vue';
+
+interface IMetric {
+    numValue: number;
+    sign: string;
+    textHtml: string;
+}
+const metricsData: IMetric[] = [
+    {
+        numValue: 17,
+        sign: ' +',
+        textHtml: 'Проєктів, якими ми <br /> пишаємося!',
+    },
+    {
+        numValue: 3,
+        sign: '',
+        textHtml: 'Роки на ринку <br /> інформаційних технологій',
+    },
+    {
+        numValue: 14,
+        sign: '',
+        textHtml: 'Фахівців в нашій <br /> команді!',
+    },
+    {
+        numValue: 100,
+        sign: ' %',
+        textHtml: 'Задоволених клієнтів!',
+    },
+];
 </script>
 
 <style scoped>
