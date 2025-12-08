@@ -2,9 +2,11 @@
     <div
         class="bg-wgite flex flex-col gap-[60px] sm:gap-[100px] mb-[60px] sm:mb-[100px]"
     >
-        <Hero />
+        <HeroSection />
 
-        <About class="mt-[50px]" />
+        <AboutSection />
+
+        <ProjectSection />
 
         <ServicesSection />
 
@@ -13,11 +15,11 @@
 </template>
 
 <script setup lang="ts">
+import HeroSection from '~/features/home/ui/HeroSection.vue';
 import AboutSection from '~/features/home/ui/AboutSection.vue';
 import ContactForm from '~/features/contact-form/ui/ContactForm.vue';
 import ServicesSection from '~/features/home/ui/ServicesSection.vue';
-import Hero from '~/features/home/ui/Hero.vue';
-import About from '~/features/home/ui/About.vue';
+import ProjectSection from '~/features/home/ui/ProjectSection.vue';
 
 const handleClick = () => {
     console.log('Кнопка натиснута!');
