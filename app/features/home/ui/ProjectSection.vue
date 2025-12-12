@@ -1,13 +1,13 @@
 <template>
     <section id="projects" class="w-full max-w-[1240px] mx-auto px-4 lg:px-8">
-        <!-- Заголовок -->
+        <!-- Title -->
         <h2
             class="font-unbounded text-section-heading lg:text-section-heading-lg mb-8 lg:mb-12 text-center lg:text-left"
         >
             ПРОЄКТИ
         </h2>
 
-        <!-- Фільтри (тільки на десктопі) -->
+        <!-- Filters (only on desktop) -->
         <div class="hidden lg:flex items-center justify-center gap-4 mb-10 lg:mb-14">
             <button
                 v-for="filter in filters"
@@ -24,7 +24,7 @@
             </button>
         </div>
 
-        <!-- Картки проєктів -->
+        <!-- Project cards -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center py-4">
             <div
                 v-for="project in filteredProjects"
@@ -32,7 +32,7 @@
                 class="bg-white w-full max-w-[400px] h-[466px] rounded-[14px] overflow-hidden flex flex-col"
                 style="box-shadow: 0 0 15px 5px rgba(83, 83, 83, 0.15)"
             >
-                <!-- Зображення проєкту -->
+                <!-- Project image -->
                 <div class="relative w-full h-[200px] overflow-hidden flex-shrink-0">
                     <img
                         :src="project.image"
@@ -41,28 +41,28 @@
                     />
                 </div>
 
-                <!-- Контент картки -->
+                <!-- Сontent cards -->
                 <div class="p-5 lg:p-6 flex flex-col h-full">
-                    <!-- Заголовок проєкту -->
+                    <!-- Project title -->
                     <h3
                         class="text-[16px] font-medium font-unbounded text-black mb-3 leading-[100%] tracking-[0%]"
                     >
                         {{ project.title }}
                     </h3>
 
-                    <!-- Опис -->
+                    <!-- Description -->
                     <p
                         class="text-[12px] font-light font-unbounded text-gray-light leading-[100%] tracking-[0%] line-clamp-4 flex-grow"
                     >
                         {{ project.description }}
                     </p>
 
-                    <!-- Метадані -->
+                    <!-- Metadata -->
                     <div
                         class="flex items-center justify-between text-[12px] font-light font-unbounded text-black leading-[100%] tracking-[0%] mb-4 mt-4 pt-4"
                     >
                         <div class="flex items-center gap-4">
-                            <!-- Дні -->
+                            <!-- Days -->
                             <div class="flex items-center gap-1">
                                 <svg
                                     class="w-4 h-4"
@@ -77,7 +77,7 @@
                                 <span>{{ project.days }} днів</span>
                             </div>
 
-                            <!-- Розробники -->
+                            <!-- Developers -->
                             <div class="flex items-center gap-1">
                                 <svg
                                     class="w-4 h-4"
@@ -97,7 +97,7 @@
                             </div>
                         </div>
 
-                        <!-- Рейтинг -->
+                        <!-- Rating -->
                         <div class="flex items-center gap-1">
                             <svg
                                 class="w-4 h-4 text-yellow-400 fill-current"
@@ -111,10 +111,10 @@
                         </div>
                     </div>
 
-                    <!-- Лінія -->
+                    <!-- Line -->
                     <div class="w-[360px] max-w-full mx-auto border-t border-[#53535359] mb-4"></div>
 
-                    <!-- Кнопка -->
+                    <!-- Button -->
                     <div class="flex justify-center">
                         <button
                             @click="openProject(project.id)"
@@ -162,7 +162,7 @@ const filters: Filter[] = [
 const activeFilter = ref<string>('landing');
 
 const projects: Project[] = [
-    // Лендінги
+    // Lendings
     {
         id: 1,
         title: 'Розробка лендінгу для TouchSkill',
@@ -196,7 +196,7 @@ const projects: Project[] = [
         rating: 5,
         category: 'landing',
     },
-    // Багатосторінкові
+    // Multipage
     {
         id: 4,
         title: 'Розробка корпоративного сайту для connected',
@@ -219,7 +219,7 @@ const projects: Project[] = [
         rating: 5,
         category: 'multipage',
     },
-    // Інтернет-магазини
+    // Online stores
     {
         id: 6,
         title: 'Розробка інтернет-магазину SHOPPE',
