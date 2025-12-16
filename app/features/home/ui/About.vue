@@ -1,63 +1,74 @@
 <template>
-    <div>
+    <div class="rounded-b-[30px]">
         <!-- heading text -->
         <h2
-            class="max-w-[1240px] mx-auto text-section-heading sm:text-section-heading-lg font-unbounded text-center sm:text-start"
+            class="max-w-[1240px] mx-auto text-section-heading sm:text-[48px]/[100%] xl:text-section-heading-lg font-unbounded text-center xl:text-start"
         >
             ПРО НАС
         </h2>
 
         <!-- main content -->
         <div
-            class="mt-[40px] bg-[#00B09026] min-h-[670px] relative flex flex-row gap-[75px] overflow-hidden rounded-b items-end"
+            class="mt-[30px] sm:mt-[40px] bg-[#00B09026] 2xl:min-h-[670px] relative flex flex-row lg:gap-[75px] overflow-hidden rounded-b-[30px] items-center xl:items-end justify-between py-[30px] xl:justify-normal sm:py-0"
         >
-            <!-- image -->
+            <!-- image desktop -->
             <img
-                class="object-contain bottom-0 flex-shrink-0 max-h-[668px] h-full hidden sm:block"
+                class="object-contain bottom-0 xl:flex-shrink-0 max-h-[550px] 2xl:max-h-[668px] h-full hidden xl:block"
                 src="/images/img-about.png"
                 alt="Робот"
             />
 
-            <!-- background shadow image -->
+            <!-- background shadow image desktop -->
             <img
-                class="absolute bottom-[-80px] left-[-20px] object-contain h-[836px] w-[575px] opacity-10 -z-10 hidden sm:block"
-                src="/images/img_2.png"
+                class="absolute bottom-[0px] left-[-15px] object-contain h-[580px] 2xl:h-[670px] 2xl:w-[575px] opacity-10 -z-10 hidden xl:block"
+                src="/images/img-about-shadow.png"
                 alt="Робот"
             />
 
             <!-- text content -->
             <div
-                class="flex flex-wrap gap-[60px] max-w-[1200px] py-[40px] px-[20px]"
+                class="flex items-center justify-center flex-col sm:grid grid-cols-1 lg:grid-cols-2 grid-rows-6 lg:grid-rows-3 gap-x-[20px] 2xl:gap-x-[40px] gap-y-[20px] sm:gap-y-[30px] xl:gap-y-[6px] max-w-[1200px] px-[20px] place-items-center lg:place-items-stretch flex-grow lg:flex-grow-0 sm:shrink-0 lg:shrink"
             >
                 <div
                     v-for="(feature, index) in features"
-                    class="min-h-[180px] sm:min-w-[460px] flex flex-row items-end justify-between"
+                    class="sm:min-h-[145px] xl:min-h-[170px] 2xl:min-h-[200px] w-full min-w-0 sm:min-w-[360px] xl:min-w-[380px] 2xl:min-w-[420px] flex flex-row items-end justify-between"
                 >
-                    <div class="flex flex-col gap-[10px] font-unbounded h-full">
+                    <div
+                        class="flex flex-col gap-[6px] sm:gap-[10px] font-unbounded h-full w-full"
+                    >
                         <p
-                            class="font-semibold text-[61px]/[100%] text-primary"
+                            class="font-semibold text-[32px]/[100%] sm:text-[48px]/[100%] xl:text-[50px]/[100%] 2xl:text-[61px]/[100%] text-primary text-center sm:text-start"
                         >
                             0{{ index + 1 }}
                         </p>
 
-                        <p class="font-medium text-[22px]/[100%]">
+                        <p
+                            class="font-medium text-[18px]/[100%] sm:text-[20px]/[100%] 2xl:text-[22px]/[100%]"
+                        >
                             {{ feature.title }}
                         </p>
 
                         <p
-                            class="font-light text-[16px]/[100%] text-black"
+                            class="font-light text-[14px]/[100%] sm:text-[16px]/[100%] text-black"
                             v-html="feature.descriptionHtml"
                         ></p>
                     </div>
 
                     <img
                         v-if="index === 0 || index === 2"
-                        class="w-[60px] h-[60px] sm:block hidden"
+                        class="w-[50px] 2xl:w-[60px] h-[50px] 2xl:h-[60px] xl:block hidden"
                         src="/images/grave.png"
                         alt="Хрест"
                     />
                 </div>
             </div>
+
+            <!-- image tablet -->
+            <img
+                class="object-contain xl:flex-shrink-0 max-w-[200px] sm:max-w-[344px] lg:max-h-[760px] h-full opacity-5 sm:opacity-100 right-[-70px] bottom-[-30px] absolute sm:static block xl:hidden"
+                src="/images/img-about-tablet.png"
+                alt="Робот"
+            />
         </div>
     </div>
 </template>
