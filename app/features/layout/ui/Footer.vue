@@ -1,6 +1,6 @@
 <template>
     <footer
-        class="w-full bg-[rgba(0,176,144,0.15)] flex flex-col px-6 font-unbounded lg:h-[150px] lg:justify-between lg:py-0"
+        class="w-full bg-[#00B09026] flex flex-col px-6 font-unbounded lg:h-[150px] lg:justify-between lg:py-0"
     >
         <div class="w-full max-w-[1440px] mx-auto flex flex-col h-full">
             <div

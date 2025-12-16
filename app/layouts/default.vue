@@ -7,13 +7,13 @@
 
             <!-- background robot image -->
             <img
-                class="absolute left-[-500px] top-[100px] h-[4490px] w-[3040px] object-contain opacity-[0.06] -z-10"
+                class="absolute left-[-500px] top-[100px] h-[4490px] w-[3040px] object-contain opacity-[0.05] -z-10"
                 src="/images/img_2.png"
                 alt="Робот"
             />
         </main>
 
-        <Footer />
+        <Footer class="z-50" />
     </div>
 </template>
 
