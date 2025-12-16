@@ -8,7 +8,9 @@
         </h2>
 
         <!-- Filters (only on desktop) -->
-        <div class="hidden lg:flex items-center justify-center gap-4 mb-10 lg:mb-14">
+        <div
+            class="hidden lg:flex items-center justify-center gap-4 mb-10 lg:mb-14"
+        >
             <button
                 v-for="filter in filters"
                 :key="filter.id"
@@ -25,15 +27,20 @@
         </div>
 
         <!-- Project cards -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center py-4">
+        <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center py-4"
+        >
             <div
-                v-for="project in filteredProjects"
+                v-for="(project, index) in filteredProjects"
                 :key="project.id"
+                v-motion="motionPreset"
                 class="bg-white w-full max-w-[400px] h-[466px] rounded-[14px] overflow-hidden flex flex-col"
                 style="box-shadow: 0 0 15px 5px rgba(83, 83, 83, 0.15)"
             >
                 <!-- Project image -->
-                <div class="relative w-full h-[200px] overflow-hidden flex-shrink-0">
+                <div
+                    class="relative w-full h-[200px] overflow-hidden flex-shrink-0"
+                >
                     <img
                         :src="project.image"
                         :alt="project.title"
@@ -93,7 +100,9 @@
                                     <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
                                     <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                                 </svg>
-                                <span>{{ project.developers }} розробників</span>
+                                <span
+                                    >{{ project.developers }} розробників</span
+                                >
                             </div>
                         </div>
 
@@ -107,23 +116,28 @@
                                     d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
                                 />
                             </svg>
-                            <span class="text-[10px] font-normal leading-[100%] tracking-[0%]">{{ project.rating }}/5</span>
+                            <span
+                                class="text-[10px] font-normal leading-[100%] tracking-[0%]"
+                                >{{ project.rating }}/5</span
+                            >
                         </div>
                     </div>
 
                     <!-- Line -->
-                    <div class="w-[360px] max-w-full mx-auto border-t border-[#53535359] mb-4"></div>
+                    <div
+                        class="w-[360px] max-w-full mx-auto border-t border-[#53535359] mb-4"
+                    ></div>
 
                     <!-- Button -->
                     <div class="flex justify-center">
                         <button
                             @click="openProject(project.id)"
-                            class="group w-[40px] h-[40px] rounded-full  flex items-center justify-center "
+                            class="group w-[40px] h-[40px] rounded-full flex items-center justify-center"
                         >
                             <img
                                 src="/images/arrow-projects.png"
                                 alt="Arrow"
-                                class="w-[30.77px] h-[30.6px] transition-transform duration-300 "
+                                class="w-[30.77px] h-[30.6px] transition-transform duration-300"
                             />
                         </button>
                     </div>
@@ -138,7 +152,7 @@ import { ref, computed } from 'vue';
 import { useMediaQuery } from '@vueuse/core';
 
 interface Filter {
-    id: string;
+    id: 'landing' | 'multipage' | 'ecommerce';
     label: string;
 }
 
@@ -150,7 +164,7 @@ interface Project {
     days: number;
     developers: number;
     rating: number;
-    category: string;
+    category: 'landing' | 'multipage' | 'ecommerce';
 }
 
 const filters: Filter[] = [
@@ -159,7 +173,28 @@ const filters: Filter[] = [
     { id: 'ecommerce', label: 'Інтернет-магазин' },
 ];
 
-const activeFilter = ref<string>('landing');
+const activeFilter = ref<'landing' | 'multipage' | 'ecommerce'>('landing');
+const motionPreset = computed(() => {
+    if (activeFilter.value === 'landing') {
+        return {
+            initial: { opacity: 0, x: -100 },
+            visibleOnce: { opacity: 1, x: 0 },
+            transition: { duration: 3 },
+        };
+    } else if (activeFilter.value === 'multipage') {
+        return {
+            initial: { opacity: 0, y: 50 },
+            visibleOnce: { opacity: 1, y: 0 },
+            transition: { duration: 3 },
+        };
+    } else if (activeFilter.value === 'ecommerce') {
+        return {
+            initial: { opacity: 0, x: 100 },
+            visibleOnce: { opacity: 1, x: 0 },
+            transition: { duration: 3 },
+        };
+    }
+});
 
 const projects: Project[] = [
     // Lendings
@@ -201,7 +236,7 @@ const projects: Project[] = [
         id: 4,
         title: 'Розробка корпоративного сайту для connected',
         description:
-            'Ціль такого сайту: показати професійність освітньої платформи, надати всю інформацію потенційним клієнтам / студентам, зняти бар\'єр недовіри через прозорість політик та структуру, мотивувати зареєструватись або записуватись на курси',
+            "Ціль такого сайту: показати професійність освітньої платформи, надати всю інформацію потенційним клієнтам / студентам, зняти бар'єр недовіри через прозорість політик та структуру, мотивувати зареєструватись або записуватись на курси",
         image: '/images/projects/connected.png',
         days: 30,
         developers: 2,
@@ -244,17 +279,18 @@ const projects: Project[] = [
     },
 ];
 
-
 const isDesktop = useMediaQuery('(min-width: 1024px)');
 
 const filteredProjects = computed(() => {
     if (isDesktop.value) {
-        return projects.filter((project) => project.category === activeFilter.value);
+        return projects.filter(
+            (project) => project.category === activeFilter.value,
+        );
     }
     return projects;
 });
 
-const setActiveFilter = (filterId: string) => {
+const setActiveFilter = (filterId: 'landing' | 'multipage' | 'ecommerce') => {
     activeFilter.value = filterId;
 };
 
@@ -262,4 +298,3 @@ const openProject = (projectId: number) => {
     console.log('Open project:', projectId);
 };
 </script>
-
