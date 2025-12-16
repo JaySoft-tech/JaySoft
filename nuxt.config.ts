@@ -2,7 +2,12 @@
 export default defineNuxtConfig({
     compatibilityDate: '2025-07-15',
     devtools: { enabled: true },
-    modules: ['@nuxt/image', '@nuxtjs/tailwindcss', '@vueuse/nuxt'],
+    modules: [
+        '@nuxt/image',
+        '@nuxtjs/tailwindcss',
+        '@vueuse/nuxt',
+        '@vueuse/motion/nuxt',
+    ],
 
     app: {
         head: {
