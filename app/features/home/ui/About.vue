@@ -14,7 +14,7 @@
             <!-- image -->
             <img
                 class="object-contain bottom-0 flex-shrink-0 max-h-[668px] h-full hidden sm:block"
-                src="/images/img_2.png"
+                src="/images/img-about.png"
                 alt="Робот"
             />
 
