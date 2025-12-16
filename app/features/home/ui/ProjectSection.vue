@@ -1,11 +1,13 @@
 <template>
     <section id="projects" class="w-full max-w-[1240px] mx-auto px-4 lg:px-8">
         <!-- Title -->
-        <h2
+        <Motion
+            is="h2"
+            preset="slideVisibleLeft"
             class="font-unbounded text-section-heading lg:text-section-heading-lg mb-8 lg:mb-12 text-center lg:text-left"
         >
             ПРОЄКТИ
-        </h2>
+        </Motion>
 
         <!-- Filters (only on desktop) -->
         <div

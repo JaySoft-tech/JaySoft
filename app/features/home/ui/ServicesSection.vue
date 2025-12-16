@@ -1,20 +1,24 @@
 <template>
     <section
+        id="services"
         class="w-full max-w-[1239px] mx-auto px-4 lg:px-0"
         style="font-family: 'Unbounded', sans-serif"
     >
-        <h2
+        <Motion
+            is="h2"
+            preset="slideVisibleLeft"
             class="font-unbounded text-section-heading lg:text-section-heading-lg mb-8 lg:mb-12"
         >
             ПОСЛУГИ
-        </h2>
+        </Motion>
 
         <div
             class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-x-[20px] lg:gap-y-[25px]"
         >
             <div
-                v-for="service in services"
+                v-for="(service, index) in services"
                 :key="service.id"
+                v-motion="serviceMotion"
                 class="relative w-full rounded-[14px] p-6 lg:p-8 overflow-hidden"
                 style="background-color: rgba(0, 176, 144, 0.15)"
             >
@@ -114,6 +118,14 @@ const services: Service[] = [
 const handleCardClick = (serviceId: number) => {
     console.log('Service clicked:', serviceId);
 };
+
+const serviceMotion = computed(() => {
+    return {
+        initial: { opacity: 0, y: 80, scale: 0.8 },
+        visible: { opacity: 1, y: 0, scale: 1 },
+        transition: { duration: 4, easing: 'easeOut' },
+    };
+});
 </script>
 
 <style scoped></style>

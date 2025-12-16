@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <section id="hero">
         <div
             class="min-h-[650px] 2xl:min-h-[780px] h-fit bg-gradient-to-b sm:bg-gradient-to-r from-white via-white to-[#00B090D9] rounded-b-[30px] relative px-[20px] flex items-center justify-between flex-col"
         >
@@ -137,7 +137,7 @@
                 ></p>
             </div>
         </div>
-    </div>
+    </section>
 </template>
 
 <script setup lang="ts">

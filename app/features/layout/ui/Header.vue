@@ -5,19 +5,19 @@
                 class="hidden lg:flex glass-card h-[72px] items-center justify-between px-8 rounded-full font-unbounded"
             >
                 <nav class="flex items-center gap-[35px]">
-                    <a
+                    <p
                         v-for="link in navLinks"
                         :key="link.href"
-                        :href="link.href"
-                        class="text-[14px] font-medium leading-[100%] text-black transition-colors duration-300 hover:text-primary"
+                        @click="scrollTo(link.href)"
+                        class="text-[14px] font-medium leading-[100%] text-black transition-colors duration-300 hover:text-primary cursor-pointer"
                     >
                         {{ link.label }}
-                    </a>
+                    </p>
                 </nav>
 
                 <NuxtLink
-                    href="#hero"
-                    class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-3"
+                    @click="scrollTo('hero')"
+                    class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-3 cursor-pointer"
                 >
                     <img
                         src="/images/logo.svg"
@@ -61,13 +61,14 @@
 
 <script setup lang="ts">
 import Button from '~/components/ui/Button.vue';
+import { scrollTo } from '#imports';
 
 type LangKey = 'ukr' | 'eng';
 
 const navLinks = [
-    { label: 'Проєкти', href: '#projects' },
-    { label: 'Послуги', href: '#services' },
-    { label: 'Контакти', href: '#contact' },
+    { label: 'Проєкти', href: 'projects' },
+    { label: 'Послуги', href: 'services' },
+    { label: 'Контакти', href: 'contacts' },
 ];
 
 const langs: { key: LangKey; label: string }[] = [

@@ -1,11 +1,13 @@
 <template>
-    <div class="rounded-b-[30px]">
+    <section class="rounded-b-[30px]">
         <!-- heading text -->
-        <h2
+        <Motion
+            is="h2"
+            preset="slideVisibleLeft"
             class="max-w-[1240px] mx-auto text-section-heading sm:text-[48px]/[100%] xl:text-section-heading-lg font-unbounded text-center xl:text-start"
         >
             ПРО НАС
-        </h2>
+        </Motion>
 
         <!-- main content -->
         <div
@@ -27,9 +29,14 @@
 
             <!-- text content -->
             <div
+                preset="slideVisibleLeft"
+                :duration="600"
                 class="flex items-center justify-center flex-col sm:grid grid-cols-1 lg:grid-cols-2 grid-rows-6 lg:grid-rows-3 gap-x-[20px] 2xl:gap-x-[40px] gap-y-[20px] sm:gap-y-[30px] xl:gap-y-[6px] max-w-[1200px] px-[20px] place-items-center lg:place-items-stretch flex-grow lg:flex-grow-0 sm:shrink-0 lg:shrink"
             >
-                <div
+                <MotionGroup
+                    preset="slideVisibleLeft"
+                    :duration="600"
+                    is="div"
                     v-for="(feature, index) in features"
                     class="sm:min-h-[145px] xl:min-h-[170px] 2xl:min-h-[200px] w-full min-w-0 sm:min-w-[360px] xl:min-w-[380px] 2xl:min-w-[420px] flex flex-row items-end justify-between"
                 >
@@ -60,7 +67,7 @@
                         src="/images/grave.png"
                         alt="Хрест"
                     />
-                </div>
+                </MotionGroup>
             </div>
 
             <!-- image tablet -->
@@ -70,7 +77,7 @@
                 alt="Робот"
             />
         </div>
-    </div>
+    </section>
 </template>
 
 <script setup lang="ts">

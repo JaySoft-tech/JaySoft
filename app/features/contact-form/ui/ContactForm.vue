@@ -1,14 +1,18 @@
 <template>
-    <div class="w-full max-w-[1240px] place-self-center">
+    <section id="contacts" class="w-full max-w-[1240px] place-self-center">
         <!-- heading text -->
-        <h2
+        <Motion
+            is="h2"
+            preset="slideVisibleLeft"
             class="text-section-heading sm:text-section-heading-lg font-unbounded text-center sm:text-start"
         >
             КОНТАКТИ
-        </h2>
+        </Motion>
 
         <!-- form container -->
-        <div
+        <Motion
+            is="div"
+            preset="slideVisibleTop"
             class="flex items-center justify-center mt-[25px] sm:mt-[46px] px-[42px] py-[45px] rounded-[50px] bg-[#D9F3EF]"
         >
             <!-- content -->
@@ -33,16 +37,18 @@
                     />
                 </div>
 
-                <Button
-                    @click="handleClick"
-                    label="Надіслати"
-                    variant="primary"
-                    icon="send"
-                    :size="isSmallScreen === true ? 'small' : 'medium'"
-                />
+                <Motion is="div" preset="slideVisibleTop">
+                    <Button
+                        @click="handleClick"
+                        label="Надіслати"
+                        variant="primary"
+                        icon="send"
+                        :size="isSmallScreen === true ? 'small' : 'medium'"
+                    />
+                </Motion>
             </div>
-        </div>
-    </div>
+        </Motion>
+    </section>
 </template>
 
 <script setup lang="ts">
