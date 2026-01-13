@@ -12,7 +12,7 @@
                     <h1
                         class="text-[32px]/[100%] sm:text-[59px]/[75px] font-unbounded font-medium max-w-[240px] sm:max-w-[520px]"
                     >
-                        СТУДІЯ РОЗРОБКИ ВЕБ САЙТІВ
+                        СТУДІЯ РОЗРОБКИ ВЕБСАЙТІВ
                     </h1>
 
                     <h2
