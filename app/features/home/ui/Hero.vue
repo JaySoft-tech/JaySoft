@@ -61,7 +61,7 @@
             <div
                 class="absolute max-sm:left-0 max-w-[390px] sm:max-w-[1320px] w-full"
             >
-                <div class="relative sm:mx-auto z-50">
+                <div class="relative sm:mx-auto z-40">
                     <div
                         class="text-primary font-medium font-unbounded text-[12px]/[100%] sm:text-[22px]/[100%] absolute top-[271px] sm:top-[16.04vh] 2xl:top-[19.04vh] left-[5.33%] sm:left-[50.33%] 2xl:left-[39.33%] float float--slow"
                     >

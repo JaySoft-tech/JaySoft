@@ -1,12 +1,13 @@
 <template>
     <header class="fixed top-0 left-0 w-full z-50 pt-6 px-6">
         <div class="mx-auto w-full max-w-[1320px]">
+            <!-- Desktop Navigation -->
             <div
                 class="hidden lg:flex glass-card h-[72px] items-center justify-between px-8 rounded-full font-unbounded"
             >
                 <nav class="flex items-center gap-[35px]">
                     <p
-                        v-for="link in navLinks"
+                        v-for="link in desktopNavLinks"
                         :key="link.href"
                         @click="scrollTo(link.href)"
                         class="text-[14px] font-medium leading-[100%] text-black transition-colors duration-300 hover:text-primary cursor-pointer"
@@ -55,7 +56,93 @@
                     />
                 </div>
             </div>
+
+            <!-- Mobile/Tablet Header -->
+            <div
+                class="lg:hidden flex items-center justify-between z-[999] relative"
+            >
+                <NuxtLink @click="scrollTo('hero')" class="cursor-pointer">
+                    <img
+                        src="/images/logo.svg"
+                        alt="JaySoft logo"
+                        class="h-42 w-42"
+                    />
+                </NuxtLink>
+
+                <button
+                    @click="toggleMenu"
+                    class="relative w-8 h-8 md:w-10 md:h-10 flex items-center justify-center"
+                    aria-label="Toggle menu"
+                >
+                    <div
+                        v-if="!isMenuOpen"
+                        class="flex flex-col gap-1.5 w-6 md:w-7"
+                    >
+                        <span
+                            class="w-full h-0.5 bg-black transition-all"
+                        ></span>
+                        <span
+                            class="w-full h-0.5 bg-black transition-all"
+                        ></span>
+                        <span
+                            class="w-full h-0.5 bg-black transition-all"
+                        ></span>
+                    </div>
+
+                    <div v-else class="relative w-6 h-6 md:w-7 md:h-7">
+                        <span
+                            class="absolute top-1/2 left-0 w-full h-0.5 bg-black rotate-45 transform -translate-y-1/2"
+                        ></span>
+                        <span
+                            class="absolute top-1/2 left-0 w-full h-0.5 bg-black -rotate-45 transform -translate-y-1/2"
+                        ></span>
+                    </div>
+                </button>
+            </div>
         </div>
+
+        <Transition name="menu">
+            <div
+                v-if="isMenuOpen"
+                class="lg:hidden fixed inset-0 bg-white z-[900] flex flex-col"
+            >
+                <div
+                    class="absolute inset-0 pointer-events-none"
+                    style="
+                        background: linear-gradient(
+                            to top,
+                            #00b090d9 0%,
+                            transparent 50%
+                        );
+                    "
+                ></div>
+
+                <nav
+                    class="relative mt-[92px] md:mt-[147px] px-[18px] md:px-[30px]"
+                >
+                    <button
+                        v-for="(link, index) in mobileNavLinks"
+                        :key="link.href"
+                        @click="handleNavClick(link.href)"
+                        :class="[
+                            'block w-full text-left font-unbounded font-medium text-black hover:text-primary transition-colors duration-300',
+                            'text-[18px] md:text-[24px] leading-[100%]',
+                            index > 0 && 'mt-[30px] md:mt-[40px]',
+                        ]"
+                    >
+                        {{ link.label }}
+                    </button>
+                </nav>
+
+                <div class="relative mt-auto mb-0">
+                    <img
+                        src="/images/hero-bg.png"
+                        alt="Robot"
+                        class="w-[348px] h-[349px] md:w-[447px] md:h-[448px] ml-[42px] md:ml-[297px] object-contain block"
+                    />
+                </div>
+            </div>
+        </Transition>
     </header>
 </template>
 
@@ -65,10 +152,17 @@ import { scrollTo } from '#imports';
 
 type LangKey = 'ukr' | 'eng';
 
-const navLinks = [
+const desktopNavLinks = [
     { label: 'Проєкти', href: 'projects' },
     { label: 'Послуги', href: 'services' },
     { label: 'Контакти', href: 'contacts' },
+];
+
+const mobileNavLinks = [
+    { label: 'ПРО НАС', href: 'about' },
+    { label: 'ПРОЄКТИ', href: 'projects' },
+    { label: 'ПОСЛУГИ', href: 'services' },
+    { label: 'КОНТАКТИ', href: 'contacts' },
 ];
 
 const langs: { key: LangKey; label: string }[] = [
@@ -77,6 +171,7 @@ const langs: { key: LangKey; label: string }[] = [
 ];
 
 const currentLang = ref<LangKey>('ukr');
+const isMenuOpen = ref(false);
 
 const handleContactClick = () => {
     console.log('Contact button clicked');
@@ -87,18 +182,29 @@ const switchLang = (lang: LangKey) => {
     console.log(`Switched to language: ${lang}`);
 };
 
-const getLangButtonClasses = (langKey: LangKey) => {
-    const baseClasses =
-        'w-[28px] h-[15px] flex items-center justify-center transition-all duration-300';
-    const activeClasses = 'text-primary scale-110 border-b-2 border-primary';
-    const inactiveClasses =
-        'text-black hover:text-primary hover:scale-105 hover:border-b-2 hover:border-primary/50';
+const toggleMenu = () => {
+    isMenuOpen.value = !isMenuOpen.value;
+    document.body.style.overflow = isMenuOpen.value ? 'hidden' : '';
+};
 
+const handleNavClick = (href: string) => {
+    scrollTo(href);
+    toggleMenu();
+};
+
+const getLangButtonClasses = (langKey: LangKey) => {
+    const isActive = currentLang.value === langKey;
     return [
-        baseClasses,
-        currentLang.value === langKey ? activeClasses : inactiveClasses,
+        'w-[28px] h-[15px] flex items-center justify-center transition-all duration-300',
+        isActive
+            ? 'text-primary scale-110 border-b-2 border-primary'
+            : 'text-black hover:text-primary hover:scale-105 hover:border-b-2 hover:border-primary/50',
     ];
 };
+
+onUnmounted(() => {
+    document.body.style.overflow = '';
+});
 </script>
 
 <style scoped>
@@ -143,5 +249,26 @@ const getLangButtonClasses = (langKey: LangKey) => {
         transparent,
         rgba(255, 255, 255, 0.3)
     );
+}
+
+.menu-enter-active,
+.menu-leave-active {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-enter-from {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+.menu-leave-to {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+.menu-enter-to,
+.menu-leave-from {
+    opacity: 1;
+    transform: translateY(0);
 }
 </style>
